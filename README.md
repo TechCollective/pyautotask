@@ -1,2 +1,2 @@
 # pyautotask
-Python library to interact with Autotask's API
+Unoffical Python library to interact with Autotask's API
