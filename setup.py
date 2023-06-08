@@ -11,5 +11,5 @@ setup(name='pyautotask',
       packages=['pyautotask'],
       scripts=['atsite.py'],
       classifiers=[],
-      install_requires=['requests', 'json', 'datetime'],
+      install_requires=['requests'],
       )
