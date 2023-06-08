@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(name='pyautotask',
-      version='0.02',
+      version='0.2',
       description='API for Autotask',
       author='Jeffrey Brite',
       author_email='jeff@techcollective.com',
