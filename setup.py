@@ -9,7 +9,7 @@ setup(name='pyautotask',
       author_email='jeff@techcollective.com',
       url='https://github.com/TechCollective/pyautotask',
       packages=['pyautotask'],
-      scripts=['ci2unifi.py'],
+      scripts=['atsite.py'],
       classifiers=[],
       install_requires=['requests', 'json', 'datetime'],
       )
