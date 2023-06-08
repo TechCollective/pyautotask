@@ -9,6 +9,7 @@ setup(name='pyautotask',
       author_email='jeff@techcollective.com',
       url='https://github.com/TechCollective/pyautotask',
       packages=['pyautotask'],
+      scripts=[],
       classifiers=[],
       install_requires=['requests'],
       )
