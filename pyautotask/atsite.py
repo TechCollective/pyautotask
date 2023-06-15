@@ -421,6 +421,10 @@ class atSite:
 		return self._api_read("Holidays" + filter_field)
 
 	# Tickets
+	def add_ticket(self, params):
+		"""Create a new ticket"""
+		return self._api_write("Tickets", params)
+    
 	def send_alert_ticket(self, company_id, ci_id):
 		ticket_title = "Network device Down! UniFi Controler reports the device is down."
 		# check if there is already a ticket
@@ -485,6 +489,9 @@ class atSite:
 	def get_ticket_by_number(self, t_no):
 		filter_fields = self.create_filter("eq", "ticketNumber", str(t_no))
 		return self.create_query("Tickets", filter_fields)
+	# Ticket attributes
+	def get_issueType_by_name(name):
+		return self._api_read("Tickets/entityInformation/fields")
 
 	# Resources
 	def get_resource_id_by_email(self, email):
