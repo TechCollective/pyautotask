@@ -10,6 +10,7 @@ import logging
 import requests
 from datetime import datetime, timedelta
 
+
 DEBUGGING = 0
 
 if DEBUGGING:
@@ -489,9 +490,15 @@ class atSite:
 	def get_ticket_by_number(self, t_no):
 		filter_fields = self.create_filter("eq", "ticketNumber", str(t_no))
 		return self.create_query("Tickets", filter_fields)
-	# Ticket attributes
+	
+    # Ticket Entity Information
 	def get_issueType_by_name(name):
 		return self._api_read("Tickets/entityInformation/fields")
+
+
+	def get_ticket_entity_info():
+		
+		return at._api_read("Tickets/entityInformation/fields")['fields']
 
 	# Resources
 	def get_resource_id_by_email(self, email):
