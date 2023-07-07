@@ -109,7 +109,7 @@ class atSite:
 			if "nextPageUrl" in obj["pageDetails"]:
 				if obj["pageDetails"]["nextPageUrl"]:
 					next_page_results = self._read(obj["pageDetails"]["nextPageUrl"])
-					result.append(next_page_results)
+					result += next_page_results
 		else:
 			result = obj
   
