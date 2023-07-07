@@ -96,11 +96,11 @@ class atSite:
 		if "errors" in obj:
 			raise APIError(obj["errors"])
 # TODO Have to deal with multipages
-# 'pageDetails': {'count': 500, 'requestCount': 500, 'prevPageUrl': None, 'nextPageUrl': 'https://webservices15.autotask.net/ATServicesRest/V1.0/Companies/query/next?paging=%7b%22pageSize%22%3a500%2c%22previousIds%22%3a%5b-1%5d%2c%22nextIds%22%3a%5b725%5d%7d&search=%7b%27filter%27%3a%5b%7b%27op%27%3a%27exist%27%2c%27field%27%3a%27IsActive%27%7d%5d%7d'}}
-# if "pageDetails" in obj:
-# raise APIError(obj["pageDetails"]["nextPageUrl"])
 		if "items" in obj:
 			result = obj["items"]
+			if "nextPageUrl" in obj["pageDetails"]:
+				next_page_results = self._read(obj["pageDetails"]["nextPageUrl"])
+            	result.update(next_page_results)
 		else:
 			result = obj
 
