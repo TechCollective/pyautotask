@@ -95,7 +95,7 @@ class atSite:
 		result = json.loads(data)
 		if "errors" in result:
 			raise APIError(result["errors"])
-	return result
+		return result
 
 	# This section is more direct API calls
 
