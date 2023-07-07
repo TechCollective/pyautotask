@@ -92,10 +92,17 @@ class atSite:
 	# need to adjust to fix AT
 	@staticmethod
 	def _jsondec(data):
-		obj = json.loads(data)
-		if "errors" in obj:
-			raise APIError(obj["errors"])
-# TODO Have to deal with multipages
+		result = json.loads(data)
+		if "errors" in result:
+			raise APIError(result["errors"])
+	return result
+
+	# This section is more direct API calls
+
+	def _read(self, url):
+		response = self.session.get(url, headers=self.headers)
+		obj = self._jsondec(response.text)
+  		# Pagination
 		if "items" in obj:
 			result = obj["items"]
 			if "nextPageUrl" in obj["pageDetails"]:
@@ -103,16 +110,8 @@ class atSite:
 				result.update(next_page_results)
 		else:
 			result = obj
-
-		return result
-
-	# This section is more direct API calls
-
-	def _read(self, url):
-		# Try block to handle the unifi server being offline.
-		response = self.session.get(url, headers=self.headers)
-		return self._jsondec(response.text)
-
+  
+		return results
 	def _api_read(self, url):
 		return self._read(self.url + url)
 
