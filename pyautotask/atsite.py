@@ -113,7 +113,8 @@ class atSite:
 		else:
 			result = obj
   
-		return results
+		return result
+
 	def _api_read(self, url):
 		return self._read(self.url + url)
 
