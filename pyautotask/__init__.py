@@ -2,7 +2,7 @@
 Python __init__ to interact with an Autotask site
 """
 import urllib3
-from pyautotask.models.ticket_entity_info.py import TicketEntityInfo
+#from pyautotask.models.ticket_entity_info.py import TicketEntityInfo
 
 
 def http_debug_log_stderr():
