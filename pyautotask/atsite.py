@@ -103,6 +103,7 @@ class atSite:
 		response = self.session.get(url, headers=self.headers)
 		obj = self._jsondec(response.text)
   		# Pagination
+		result = None
 		if "items" in obj:
 			result = obj["items"]
 			if "nextPageUrl" in obj["pageDetails"]:
