@@ -106,9 +106,9 @@ class atSite:
 		result = None
 		if "items" in obj:
 			result = obj["items"]
+			print(obj['pageDetails'])
 			if "nextPageUrl" in obj["pageDetails"]:
 				next_page_results = self._read(obj["pageDetails"]["nextPageUrl"])
-				print(next_page_results)
 				result.update(next_page_results)
 		else:
 			result = obj
